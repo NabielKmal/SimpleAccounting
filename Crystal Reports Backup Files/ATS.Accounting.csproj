@@ -1,0 +1,395 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1E39C059-40B6-418A-A250-CFD261E0B5D6}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ATS.Accounting</RootNamespace>
+    <AssemblyName>ATSAccounting</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ManifestCertificateThumbprint>AD8455ACF89D88270EA687682A0C90538F6A2D14</ManifestCertificateThumbprint>
+    <ManifestKeyFile>ATS.Accounting_TemporaryKey.pfx</ManifestKeyFile>
+    <GenerateManifests>true</GenerateManifests>
+    <SignManifests>true</SignManifests>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>F:\My Documents\Visual Studio 2008\Projects\ATS\AccountingWithCurrency\publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>4</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Enterprise.Framework, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Enterprise.InfoStore, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="Microsoft.Practices.CompositeUI, Version=1.0.51205.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\Microsoft.Practices.CompositeUI.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.CompositeUI.WinForms, Version=1.0.51205.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\Microsoft.Practices.CompositeUI.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ObjectBuilder, Version=1.0.51205.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\Microsoft.Practices.ObjectBuilder.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WeifenLuo.WinFormsUI.Docking, Version=2.2.3164.40695, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\WeifenLuo.WinFormsUI.Docking.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AboutBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutBox.Designer.cs">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AccountDataAdapter.cs" />
+    <Compile Include="AccountEditor.cs" />
+    <Compile Include="AccountEditorHome.cs" />
+    <Compile Include="AccountExplorer.cs" />
+    <Compile Include="AccountExplorerView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AccountExplorerView.designer.cs">
+      <DependentUpon>AccountExplorerView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AccountView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AccountView.designer.cs">
+      <DependentUpon>AccountView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ArgumentValidation.cs" />
+    <Compile Include="Constants\SystemConstants.cs" />
+    <Compile Include="Constants\WorkspaceConstants.cs" />
+    <Compile Include="CurrencyDataAdapter.cs" />
+    <Compile Include="CurrencyEditor.cs" />
+    <Compile Include="CurrencyEditorHome.cs" />
+    <Compile Include="CurrencyExplorer.cs" />
+    <Compile Include="CurrencyExplorerView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CurrencyExplorerView.Designer.cs">
+      <DependentUpon>CurrencyExplorerView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CurrencyView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CurrencyView.Designer.cs">
+      <DependentUpon>CurrencyView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DockWorkspace.cs" />
+    <Compile Include="frmCurrentDate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCurrentDate.designer.cs">
+      <DependentUpon>frmCurrentDate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="generated\AccountDataUnit.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="generated\AccountKind.cs" />
+    <Compile Include="generated\AccountRow.cs" />
+    <Compile Include="generated\AccountTable.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="generated\CurrencyDataUnit.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="generated\CurrencyRow.cs" />
+    <Compile Include="generated\CurrencyTable.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DebitCredit.cs" />
+    <Compile Include="generated\JournalEntryDataUnit.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="generated\JournalEntryLineRow.cs" />
+    <Compile Include="generated\JournalEntryLineTable.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="generated\JournalEntryRow.cs" />
+    <Compile Include="generated\JournalEntryTable.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="generated\ObjectTypeCode.cs" />
+    <Compile Include="generated\OrganizationRow.cs" />
+    <Compile Include="generated\OrganizationTable.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="JournalEntryDataAdapter.cs" />
+    <Compile Include="JournalEntryEditor.cs" />
+    <Compile Include="JournalEntryExplorer.cs" />
+    <Compile Include="JournalEntryExplorerView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="JournalEntryExplorerView.designer.cs">
+      <DependentUpon>JournalEntryExplorerView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JournalEntryHome.cs" />
+    <Compile Include="JournalEntryView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="JournalEntryView.designer.cs">
+      <DependentUpon>JournalEntryView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainWindow.Designer.cs">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OrganizationDataAdapter.cs" />
+    <Compile Include="OrganizationDataUnit.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="OrganizationService.cs" />
+    <Compile Include="OrganizationView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrganizationView.designer.cs">
+      <DependentUpon>OrganizationView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AboutBox.resx">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AccountExplorerView.resx">
+      <DependentUpon>AccountExplorerView.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AccountView.resx">
+      <DependentUpon>AccountView.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CurrencyExplorerView.resx">
+      <DependentUpon>CurrencyExplorerView.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CurrencyView.resx">
+      <DependentUpon>CurrencyView.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCurrentDate.resx">
+      <DependentUpon>frmCurrentDate.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JournalEntryExplorerView.resx">
+      <DependentUpon>JournalEntryExplorerView.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JournalEntryView.resx">
+      <DependentUpon>JournalEntryView.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainWindow.resx">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrganizationView.resx">
+      <DependentUpon>OrganizationView.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RepBlanceSheet.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RepBlanceSheet.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RepGeneralJournal.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RepGeneralJournal.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RepGeneralLedger.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RepGeneralLedger.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RepIncomeStatement.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RepIncomeStatement.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RepTrialBalance.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RepTrialBalance.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SqlResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>SqlResource.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="dsAccount_Journals.xsd" />
+    <None Include="dsSheet.xsd" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="RepBlanceSheet.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RepBlanceSheet.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RepBlanceSheetProcess.cs" />
+    <Compile Include="RepGeneralJournal.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RepGeneralJournal.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RepGeneralJournalProcess.cs" />
+    <Compile Include="RepGeneralLedger.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RepGeneralLedger.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RepGeneralLedgerProcess.cs" />
+    <Compile Include="RepIncomeStatement.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RepIncomeStatement.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RepIncomeStatementProcess.cs" />
+    <Compile Include="RepTrialBalance.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RepTrialBalance.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RepTrialBalanceProcess.cs" />
+    <Compile Include="RootEntityService.cs" />
+    <Compile Include="SqlResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SqlResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SystemInfoService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ATS.EnterpriseSystem\ATS.EnterpriseSystem.csproj">
+      <Project>{4CB2556B-A956-4BCF-877B-835FA00E883D}</Project>
+      <Name>ATS.EnterpriseSystem</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DBAccountingC.mdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="ATS.Accounting_TemporaryKey.pfx" />
+    <None Include="DBAccountingC_Template.mdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <Content Include="SqlTemp.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{967B4E0D-AD0C-4609-AB67-0FA40C0206D8}" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="BusinessObjects.CrystalReports.10.5">
+      <Visible>False</Visible>
+      <ProductName>Crystal Reports Basic for Visual Studio 2008 %28x86, x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="DBAccountingC.mdb">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="SqlTemp.txt">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,329 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4CB2556B-A956-4BCF-877B-835FA00E883D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ATS.EnterpriseSystem</RootNamespace>
+    <AssemblyName>ATS.EnterpriseSystem</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\Crystal.Reports.Essentials.13.0.15.1840\lib\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalDecisions.ReportSource.1.0.0\lib\CrystalDecisions.ReportSource.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\Crystal.Reports.Essentials.13.0.15.1840\lib\CrystalDecisions.Shared.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.Web, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\Crystal.Reports.Essentials.13.0.15.1840\lib\CrystalDecisions.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalDecisions.Windows.Forms.1.0.0\lib\CrystalDecisions.Windows.Forms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Crm.Sdk.Proxy, Version=8.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CrmSdk.CoreAssemblies.8.1.0.2\lib\net452\Microsoft.Crm.Sdk.Proxy.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.6.1.7600.16394\lib\net35\Microsoft.IdentityModel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Clients.ActiveDirectory, Version=2.22.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Clients.ActiveDirectory.2.22.302111727\lib\net45\Microsoft.IdentityModel.Clients.ActiveDirectory.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Clients.ActiveDirectory.WindowsForms, Version=2.22.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Clients.ActiveDirectory.2.22.302111727\lib\net45\Microsoft.IdentityModel.Clients.ActiveDirectory.WindowsForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.CompositeUI">
+      <HintPath>..\dlls\Microsoft.Practices.CompositeUI.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.CompositeUI.WinForms">
+      <HintPath>..\dlls\Microsoft.Practices.CompositeUI.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ObjectBuilder">
+      <HintPath>..\dlls\Microsoft.Practices.ObjectBuilder.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Uii.AifServices, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CrmSdk.UII.CommonAssemblies.8.1.0.2\lib\net452\Microsoft.Uii.AifServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Uii.Common, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CrmSdk.UII.CommonAssemblies.8.1.0.2\lib\net452\Microsoft.Uii.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Uii.Common.Configuration, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CrmSdk.UII.CommonAssemblies.8.1.0.2\lib\net452\Microsoft.Uii.Common.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Uii.Common.Listeners, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CrmSdk.UII.CommonAssemblies.8.1.0.2\lib\net452\Microsoft.Uii.Common.Listeners.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Uii.Common.Logging, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CrmSdk.UII.CommonAssemblies.8.1.0.2\lib\net452\Microsoft.Uii.Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Uii.Common.Logging.Providers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CrmSdk.UII.CommonAssemblies.8.1.0.2\lib\net452\Microsoft.Uii.Common.Logging.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Uii.Common.Providers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CrmSdk.UII.CommonAssemblies.8.1.0.2\lib\net452\Microsoft.Uii.Common.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Uii.Csr.Browser.Web, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CrmSdk.UII.CommonAssemblies.8.1.0.2\lib\net452\Microsoft.Uii.Csr.Browser.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Uii.Csr.Core, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CrmSdk.UII.CommonAssemblies.8.1.0.2\lib\net452\Microsoft.Uii.Csr.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Uii.Csr.Win32Api, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CrmSdk.UII.CommonAssemblies.8.1.0.2\lib\net452\Microsoft.Uii.Csr.Win32Api.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Uii.Desktop.Core, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CrmSdk.UII.DesktopAssemblies.8.1.0.2\lib\net452\Microsoft.Uii.Desktop.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Uii.Desktop.Cti.Controls, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CrmSdk.UII.DesktopAssemblies.8.1.0.2\lib\net452\Microsoft.Uii.Desktop.Cti.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Uii.Desktop.Cti.Core, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CrmSdk.UII.DesktopAssemblies.8.1.0.2\lib\net452\Microsoft.Uii.Desktop.Cti.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Uii.Desktop.SessionManager, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CrmSdk.UII.DesktopAssemblies.8.1.0.2\lib\net452\Microsoft.Uii.Desktop.SessionManager.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Uii.Desktop.UI.Controls, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CrmSdk.UII.DesktopAssemblies.8.1.0.2\lib\net452\Microsoft.Uii.Desktop.UI.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Uii.Desktop.UI.Controls.Wpf, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CrmSdk.UII.DesktopAssemblies.8.1.0.2\lib\net452\Microsoft.Uii.Desktop.UI.Controls.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Uii.Desktop.UI.Core, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CrmSdk.UII.DesktopAssemblies.8.1.0.2\lib\net452\Microsoft.Uii.Desktop.UI.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Uii.Desktop.UI.Wpf, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CrmSdk.UII.DesktopAssemblies.8.1.0.2\lib\net452\Microsoft.Uii.Desktop.UI.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Uii.Practices.CompositeUI, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CrmSdk.UII.DesktopAssemblies.8.1.0.2\lib\net452\Microsoft.Uii.Practices.CompositeUI.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Uii.Practices.CompositeUI.Windows, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CrmSdk.UII.DesktopAssemblies.8.1.0.2\lib\net452\Microsoft.Uii.Practices.CompositeUI.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Uii.Practices.CompositeUI.WinForms, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CrmSdk.UII.DesktopAssemblies.8.1.0.2\lib\net452\Microsoft.Uii.Practices.CompositeUI.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Uii.Practices.ObjectBuilder, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CrmSdk.UII.DesktopAssemblies.8.1.0.2\lib\net452\Microsoft.Uii.Practices.ObjectBuilder.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xrm.Sdk, Version=8.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CrmSdk.CoreAssemblies.8.1.0.2\lib\net452\Microsoft.Xrm.Sdk.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xrm.Sdk.Deployment, Version=8.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CrmSdk.Deployment.8.1.0.2\lib\net452\Microsoft.Xrm.Sdk.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xrm.Sdk.Workflow, Version=8.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CrmSdk.Workflow.8.1.0.2\lib\net452\Microsoft.Xrm.Sdk.Workflow.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xrm.Tooling.Connector, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CrmSdk.XrmTooling.CoreAssembly.8.1.0.2\lib\net452\Microsoft.Xrm.Tooling.Connector.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Activities" />
+    <Reference Include="System.Activities.Presentation" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.DirectoryServices.AccountManagement" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Workflow.Activities" />
+    <Reference Include="System.Workflow.ComponentModel" />
+    <Reference Include="System.Workflow.Runtime" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WeifenLuo.WinFormsUI.Docking">
+      <HintPath>..\dlls\WeifenLuo.WinFormsUI.Docking.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppService\ConnectionStringHelper.cs" />
+    <Compile Include="AppService\DACElement.cs" />
+    <Compile Include="AppService\DataBaseConnection.cs" />
+    <Compile Include="AppService\DataRowBase.cs" />
+    <Compile Include="AppService\DataTableHelper.cs" />
+    <Compile Include="AppService\DataUnit.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="AppService\DataUnitAdapter.cs" />
+    <Compile Include="AppService\IDataUnitAdapter.cs" />
+    <None Include="app.config" />
+    <None Include="AppService\IDataUnitAdapterOld.cs" />
+    <Compile Include="AppService\IRootEntityService.cs" />
+    <Compile Include="AppService\OleDataBaseConnection.cs" />
+    <Compile Include="AppService\validation.cs" />
+    <Compile Include="ArgumentValidation.cs" />
+    <Compile Include="AppService\IDACElement.cs" />
+    <Compile Include="AppService\IDataBaseConnection.cs" />
+    <Compile Include="AppService\IDataUnit.cs" />
+    <Compile Include="ControlUtil.cs" />
+    <Compile Include="DataSetExtensions.cs" />
+    <Compile Include="DataUtil.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SmartClients\ApplicationWorkItem.cs" />
+    <Compile Include="SmartClients\DataBaseManager.cs" />
+    <Compile Include="SmartClients\EntityEditor\EntityEditor.cs" />
+    <Compile Include="SmartClients\EntityEditor\EntityEditorConstants.cs" />
+    <Compile Include="SmartClients\EntityEditor\EntityEditorController.cs" />
+    <Compile Include="SmartClients\EntityEditor\EntityEditorHome.cs" />
+    <Compile Include="SmartClients\EntityEditor\EntityEditorHomeManager.cs" />
+    <Compile Include="SmartClients\EntityEditor\EntityEditorToolBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SmartClients\EntityEditor\EntityEditorToolBar.Designer.cs">
+      <DependentUpon>EntityEditorToolBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SmartClients\EntityEditor\EntityEditorView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SmartClients\EntityEditor\EntityEditorView.Designer.cs">
+      <DependentUpon>EntityEditorView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SmartClients\EntityEditor\IEntityEditor.cs" />
+    <Compile Include="SmartClients\EntityEditor\IEntityEditorHome.cs" />
+    <Compile Include="SmartClients\EntityEditor\IUIDataUnitAdapter.cs" />
+    <Compile Include="SmartClients\EntityEditor\LookupEngine\EntityFormTest.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SmartClients\EntityExplorer\EntityExplorer.cs" />
+    <Compile Include="SmartClients\EntityExplorer\EntityExplorerConstants.cs" />
+    <Compile Include="SmartClients\EntityExplorer\EntityExplorerController.cs" />
+    <Compile Include="SmartClients\EntityExplorer\EntityExplorerToolBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SmartClients\EntityExplorer\EntityExplorerToolBar.Designer.cs">
+      <DependentUpon>EntityExplorerToolBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SmartClients\EntityExplorer\EntityExplorerView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SmartClients\EntityExplorer\EntityExplorerView.Designer.cs">
+      <DependentUpon>EntityExplorerView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SmartClients\EntityExplorer\IEntityExplorer.cs" />
+    <Compile Include="ISelectionService.cs" />
+    <Compile Include="SmartClients\EntityExplorer\SimpleEntityExplorer.cs" />
+    <Compile Include="SmartClients\IDataBaseManager.cs" />
+    <Compile Include="ObjectIdentity.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SmartClients\IObjectChangeService.cs" />
+    <Compile Include="SmartClients\ISystemInfoService.cs" />
+    <Compile Include="SmartClients\Reports\ReportProcess.cs" />
+    <Compile Include="SmartClients\Reports\ReportsConstants.cs" />
+    <Compile Include="SmartClients\Reports\ReportViewer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SmartClients\Reports\ReportViewer.Designer.cs">
+      <DependentUpon>ReportViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SmartClients\ShellProgram.cs" />
+    <Compile Include="SmartClients\TypeCodeInfo.cs" />
+    <Compile Include="SmartClients\IUIService.cs" />
+    <Compile Include="SmartClients\EntityEditor\LookupEngine\lookup.cs">
+    </Compile>
+    <Compile Include="SmartClients\UIProcess\UIProcess.cs" />
+    <Compile Include="SmartClients\UIProcess\UIProcessHome.cs" />
+    <Compile Include="SmartClients\UIProcess\UIProcessHomeManager.cs" />
+    <Compile Include="SmartClients\UIProcess\UIProcessSettings.cs" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SmartClients\EntityEditor\EntityEditorToolBar.resx">
+      <DependentUpon>EntityEditorToolBar.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SmartClients\EntityExplorer\EntityExplorerToolBar.resx">
+      <DependentUpon>EntityExplorerToolBar.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SmartClients\EntityExplorer\EntityExplorerView.resx">
+      <DependentUpon>EntityExplorerView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SmartClients\Reports\ReportViewer.resx">
+      <DependentUpon>ReportViewer.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{967B4E0D-AD0C-4609-AB67-0FA40C0206D8}" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="CrystalReportsDataDefModelLib">
+      <Guid>{9B2F3E7B-8D45-47E8-95D3-3A9C1B22437F}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="CrystalReportsReportDefModelLib">
+      <Guid>{BF40B97D-06EA-4AB1-91DE-18CB29A2B25A}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

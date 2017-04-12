@@ -1,0 +1,39 @@
+﻿for vw_Account:
+SELECT Account.[AccountID], Account.[AccountKind], Account.[AccountNumber], Account.[Name], Account.[AuxiliaryCurrencyID], Account.[AuxiliaryOpeningBalance], Account.[BalanceType], Account.[Description], Account.[OpeningBalance], Account.[OrganizationID], Account.[ExchangeRate], (Select Sum(PostedAmount) from JournalEntryLine where JournalEntryLine.AccountID=Account.AccountID) AS JournalBalance, (IIf(JournalBalance Is Null,0,JournalBalance)+IIf(OpeningBalance Is Null,0,OpeningBalance)) AS CurrentBalance, (Select Sum(PostedAuxiliaryAmount) from JournalEntryLine where JournalEntryLine.AccountID=Account.AccountID AND JournalEntryLine.AuxiliaryCurrencyID=Account.AuxiliaryCurrencyID) AS AuxiliaryJournalBalance, (IIf(AuxiliaryJournalBalance Is Null,0,AuxiliaryJournalBalance)+IIf(AuxiliaryOpeningBalance Is Null,0,AuxiliaryOpeningBalance)) AS AuxiliaryCurrentBalance
+FROM Account;
+
+
+ SELECT [JournalEntryLine].[AccountID], 
+ [JournalEntryLine].[Amount], 
+ [JournalEntryLine].[AmountSide], 
+ [JournalEntryLine].[JournalEntryID], 
+ [JournalEntryLine].[JournalEntryLineID], 
+ [JournalEntryLine].[LineNumber], 
+ [JournalEntryLine].[PostedAmount], 
+ IIf([AmountSide]=1,[Amount],Null) AS Debit, 
+ IIf([AmountSide]=2,[Amount],Null) AS Credit, 
+ [JournalEntryLine].[AuxiliaryAmount], 
+ [JournalEntryLine].[AuxiliaryCurrencyID], 
+ [JournalEntryLine].[Description], 
+ [JournalEntryLine].[ExchangeRate], 
+ [JournalEntryLine].[PostedAuxiliaryAmount], 
+ [JournalEntry].[Description] AS [JournalEntryIDDescription], 
+ [JournalEntry].[EntryDate] AS [JournalEntryIDEntryDate], 
+ [JournalEntry].[EntryNumber] AS [JournalEntryIDEntryNumber], 
+ [JournalEntry].[Source] AS [JournalEntryIDSource], 
+ [Account].[AccountKind] AS [AccountIDAccountKind], 
+ [Account].[AccountNumber] AS [AccountIDAccountNumber], 
+ [Account].[BalanceType] AS [AccountIDBalanceType], 
+ [Account].[Name] AS [AccountIDName], 
+ [Account].[OpeningBalance] AS [AccountIDOpeningBalance], 
+ [Account].[AuxiliaryCurrencyID] AS [AccountIDAuxiliaryCurrencyID], 
+ [Account].[AuxiliaryOpeningBalance] AS [AccountIDAuxiliaryOpeningBalance], 
+ [Account].[Description] AS [AccountIDDescription] 
+ FROM (([Account] INNER JOIN ([JournalEntry] INNER JOIN [JournalEntryLine] On ([JournalEntry].[JournalEntryID]=([JournalEntryLine].[JournalEntryID]))) On ([Account].[AccountID]=([JournalEntryLine].[AccountID]))))
+
+
+//////////////////////////////////////////////
+//
+SELECT [JournalEntryLine].[AccountID], [JournalEntryLine].[Amount], [JournalEntryLine].[AmountSide], [JournalEntryLine].[JournalEntryID], [JournalEntryLine].[JournalEntryLineID], [JournalEntryLine].[LineNumber], [JournalEntryLine].[PostedAmount], IIf([AmountSide]=1,[Amount],Null) AS Debit, IIf([AmountSide]=2,[Amount],Null) AS Credit, [JournalEntryLine].[AuxiliaryAmount], [JournalEntryLine].[AuxiliaryCurrencyID], [JournalEntryLine].[Description], [JournalEntryLine].[ExchangeRate], [JournalEntryLine].[PostedAuxiliaryAmount], [JournalEntry].[Description] AS JournalEntryIDDescription, [JournalEntry].[EntryDate] AS JournalEntryIDEntryDate, [JournalEntry].[EntryNumber] AS JournalEntryIDEntryNumber, [JournalEntry].[Source] AS JournalEntryIDSource, [Account].[AccountKind] AS AccountIDAccountKind, [Account].[AccountNumber] AS AccountIDAccountNumber, [Account].[BalanceType] AS AccountIDBalanceType, [Account].[Name] AS AccountIDName, [Account].[OpeningBalance] AS AccountIDOpeningBalance, [Account].[AuxiliaryCurrencyID] AS AccountIDAuxiliaryCurrencyID, [Account].[AuxiliaryOpeningBalance] AS AccountIDAuxiliaryOpeningBalance, [Account].[Description] AS AccountIDDescription
+FROM (([JournalEntry] INNER JOIN ([Account] INNER JOIN [JournalEntryLine] On ([Account].[AccountID]=([JournalEntryLine].[AccountID]))) On ([JournalEntry].[JournalEntryID]=([JournalEntryLine].[JournalEntryID]))))
+
